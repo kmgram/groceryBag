@@ -1,0 +1,17 @@
+{% extends 'index/base.html' %}
+
+
+{% block content %}
+
+  
+<center>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <p>Are you sure to delete "{{form_instance.name}}"?</p>
+
+    <button type="submit" class=btn btn-success>Submit</button>
+
+  </form>
+</center>
+
+{% endblock %}

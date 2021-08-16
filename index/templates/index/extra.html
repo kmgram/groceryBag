@@ -1,0 +1,47 @@
+{% extends 'index/base.html' %}
+
+
+{% block content %}
+<br>
+<div class="d-flex justify-content-center" style="font-size: large" ;>Add Grocey Items</div>
+
+
+<form method="POST" action="">
+  {% csrf_token %}
+
+  <div class="form-group" style="margin: 10px 70px 20px 70px">
+    <label for="FormControlInput1">Item name</label>
+    <input type="text" class="form-control" id="FormControlInput1" placeholder="Item name">
+    
+  </div>
+  <div class="form-group" style="margin: 10px 70px 20px 70px">
+    <label for="FormControlInput1">Item quantity</label>
+    <input type="text" class="form-control" id="FormControlInput1" placeholder="Item quantity">
+  </div>
+  <div class="form-group" style="margin: 10px 70px 20px 70px">
+    <label for="FormControlSelect1">Quantity unit</label>
+    <select class="form-control" id="FormControlSelect1">
+      <option>Kgs</option>
+      <option>gms</option>
+      <option>ltr</option>
+      <option>pcs</option>
+    </select>
+  </div>
+  <div class="form-group" style="margin: 10px 70px 20px 70px">
+    <label for="FormControlSelect1">Item status</label>
+    <select class="form-control" id="FormControlSelect1">
+      <option>BOUGHT</option>
+      <option>PENDING</option>
+      <option>NOT AVAILABLE</option>
+    </select>
+  </div>
+  {% include 'index/date_add.html' %}
+
+  <div class="d-flex justify-content-center mt-3 login_container">
+    <input class="btn add_btn" type="submit" value="Add item">
+  </div>
+
+</form>
+
+
+{% endblock %}

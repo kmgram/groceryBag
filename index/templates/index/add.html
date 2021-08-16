@@ -1,0 +1,35 @@
+{% extends 'index/base.html' %}
+
+
+{% block content %}
+<br>
+<div class="d-flex justify-content-center" style="font-size: large" ;>Update Grocey Items</div>
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+
+<form action="" method="POST" style="margin: 10px 70px 20px 70px">
+  {% csrf_token %}
+
+
+  {{form_grocery.name }}
+  <hr>
+ 
+  {{form_grocery.quantity}}
+  <hr>
+  <p>Quantity unit</p>
+  {{form_grocery.qty_unit}}
+ <hr>
+  <p>Status</p>
+  {{form_grocery.status}}
+ <hr>
+  {{form_grocery.date_created}}
+ <hr>
+  <center>
+    <input type="submit" value="Submit">
+  </center>
+
+</form>
+
+
+{% endblock %}

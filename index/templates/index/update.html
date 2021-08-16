@@ -1,0 +1,17 @@
+{% extends 'index/base.html' %}
+
+
+{% block content %}
+
+    {% include 'index/date_update.html' %}
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{form_instance.as_p }}
+    
+
+    <button type="submit" class=btn btn-success>Submit</button>
+
+  </form>
+
+{% endblock %}
