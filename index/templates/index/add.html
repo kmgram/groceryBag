@@ -3,7 +3,7 @@
 
 {% block content %}
 <br>
-<div class="d-flex justify-content-center" style="font-size: large" ;>Update Grocey Items</div>
+<div class="d-flex justify-content-center" style="font-size: large" ;>Add Grocey Items</div>
 {% for message in messages %}
 {{ message }}
 {% endfor %}
@@ -11,18 +11,19 @@
 <form action="" method="POST" style="margin: 10px 70px 20px 70px">
   {% csrf_token %}
 
-
+<h6>Item name</h6>
   {{form_grocery.name }}
   <hr>
- 
+  <h6>Item quantity</h6>
   {{form_grocery.quantity}}
   <hr>
-  <p>Quantity unit</p>
+  <h6>Quantity unit</h6>
   {{form_grocery.qty_unit}}
  <hr>
-  <p>Status</p>
+  <h6>Status</h6>
   {{form_grocery.status}}
  <hr>
+ <h6>Date created</h6>
   {{form_grocery.date_created}}
  <hr>
   <center>

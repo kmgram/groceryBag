@@ -10,14 +10,16 @@
 
 </center>
 </form>
-
-
+<br>
+<center>
+{% for message in messages %}
+{{ message }}
+{% endfor %}
+</center>
 <br>
 <a href="/additem" style="display:inline-block; color:#091fec; margin-right:80px;"><h4>Add items</h4></a>
 <br>
-{% for message in messages %}
-{{message}}
-{% endfor %}
+
 <div class="card w-100">
     <div class="row">
         

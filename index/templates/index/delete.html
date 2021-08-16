@@ -7,9 +7,14 @@
 <center>
   <form action="" method="POST">
     {% csrf_token %}
-    <p>Are you sure to delete "{{form_instance.name}}"?</p>
-
-    <button type="submit" class=btn btn-success>Submit</button>
+    <br>
+    <br>
+    <p>Are you sure you want to delete "{{form_instance.name}}"?</p>
+  
+     <br>
+      <a href={% url 'dashboard-view' %}>Cancel</a>
+      <input type="submit" value="Confirm">  
+   
 
   </form>
 </center>

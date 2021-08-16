@@ -2,16 +2,36 @@
 
 
 {% block content %}
+<br>
+<div class="d-flex justify-content-center" style="font-size: large" ;>Add Grocey Items</div>
+{% for message in messages %}
+{{ message }}
+{% endfor %}
 
-    {% include 'index/date_update.html' %}
+<form action="" method="POST" style="margin: 10px 70px 20px 70px">
+  {% csrf_token %}
 
-  <form action="" method="POST">
-    {% csrf_token %}
-    {{form_instance.as_p }}
-    
+<h6>Item name</h6>
+ {{form_instance.name}}
 
-    <button type="submit" class=btn btn-success>Submit</button>
+  <hr>
+  <h6>Item quantity</h6>
+  {{form_instance.quantity}}
+  <hr>
+  <h6>Quantity unit</h6>
+  {{form_instance.qty_unit}}
+ <hr>
+  <h6>Status</h6>
+  {{form_instance.status}}
+ <hr>
+ <h6>Date created</h6>
+  {{form_instance.date_created}}
+ <hr>
+  <center>
+    <input type="submit" value="Submit">
+  </center>
 
-  </form>
+</form>
+
 
 {% endblock %}
