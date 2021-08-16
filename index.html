@@ -1,1 +1,39 @@
 
+{% extends 'index/base.html' %}
+
+
+{% block content %}
+<form action="" method='POST'>
+    {% csrf_token %}
+<center>
+    <p>Select a date to filter</p><input type="date" name="date_select">
+    <input type="submit" value="filter">
+
+</center>
+</form>
+
+
+<br>
+<a href="/additem" style="display:inline-block; color:#091fec; margin-right:80px;"><h4>Add items</h4></a>
+<br>
+{% for message in messages %}
+{{message}}
+{% endfor %}
+<div class="card w-100">
+    <div class="row">
+        
+        {% for i in querydata %}
+            <div class="col-lg-3">
+                <div class="card border-primary mt-5">
+                    <div class="card-header">{{i.name}}</div>
+                    <div class="card-body"><h4 class="card-title">{{i.quantity}} {{i.qty_unit}}</h4>
+                        <p class="card-text">{{i.status}}</p>
+                        <a href="/updateitem/{{i.id}}" style="display:inline-block; color:#091fec; margin-right:80px;"><h4>Update</h4></a>
+                        <a href="/deleteitem/{{i.id}}" style="display:inline-block; color:#091fec;"><h4>Delete</h4></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
